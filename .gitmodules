@@ -1,0 +1,3 @@
+[submodule "Speech256"]
+	path = Speech256
+	url = https://github.com/trcwm/Speech256
