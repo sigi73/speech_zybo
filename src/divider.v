@@ -21,8 +21,13 @@
 
 
 module divider(
+    (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 speech_clk CLK" *)
     input clk_in,
+    (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
+    (* X_INTERFACE_PARAMETER = "POLARITY ACTIVE_HIGH" *)
     input reset,
+    (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 speech_clk CLK" *)
+    (* X_INTERFACE_PARAMETER = "FREQ_HZ 2560003" *)
     output clk_out
     );
     
