@@ -143,11 +143,18 @@ initial begin
     //Send 0x1 to the AXI GPIO Data register 1
     //#2000ns
     //#12000ns
-    #5000
+    #5000ns
     addr = 0;
     data = 1;
     master_agent.AXI4LITE_WRITE_BURST(base_addr + addr,0,data,resp);
     
+    #200ns
+    addr = 4;
+    master_agent.AXI4LITE_READ_BURST(base_addr + addr,0,data,resp);
+
+    
+    #800ns
+    master_agent.AXI4LITE_READ_BURST(base_addr + addr,0,data,resp);
     //Send 0x0 to the AXI GPIO Data register 1
     //#200ns
     //addr = 0;
@@ -190,6 +197,7 @@ end
 // Simulation output processes
 //////////////////////////////////////////////////////////////////////////////////
 //
+
 /*
 always @(posedge led_1)
 begin

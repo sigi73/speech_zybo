@@ -231,8 +231,6 @@
 	      slv_reg3 <= 0;
 	    end 
 	  else begin
-	    slv_reg1 <= {{C_S_AXI_DATA_WIDTH-1{1'b0}}, allophone_ldq};
-
 	    if (slv_reg_wren)
 	      begin
 	        case ( axi_awaddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] )
@@ -270,13 +268,13 @@
 	          default : begin
 	                      slv_reg0 <= slv_reg0;
 	                      //slv_reg1 <= slv_reg1;
-	                      slv_reg2 <= slv_reg2;
-	                      slv_reg3 <= slv_reg3;
+	                      slv_reg1 <= {{C_S_AXI_DATA_WIDTH-1{1'b0}}, allophone_ldq};
+	                      //slv_reg2 <= slv_reg2;
+	                      //slv_reg3 <= slv_reg3;
 	                    end
 	        endcase
 	      end
 	  end
-	  
 	  
       if (received_allophone)
       begin
